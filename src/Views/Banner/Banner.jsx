@@ -4,6 +4,8 @@ import './Banner.css'
 import axios from 'axios';
 import { useState } from 'react';
 
+import {url} from "../../config/config";
+
 import {
     Button,
     Divider
@@ -20,7 +22,7 @@ function Banner() {
   const [image, setImage] = useState();
 
   const getText = async () => {
-    const res = await axios.get(`http://localhost:1337/banner-home`);
+    const res = await axios.get(`${url}/banner-home`);
     const { title, description, button_link, home_photo } = res.data;
     console.log(title);
     setTitle(title);

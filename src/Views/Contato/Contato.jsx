@@ -3,6 +3,7 @@ import {useEffect} from "react";
 import {useState} from "react";
 import axios from 'axios';
 import './Contato.css'
+import {url} from "../../config/config";
 
 import{
     Youtube,
@@ -26,7 +27,7 @@ function Contato() {
     const [endereco, setEndereco] = useState([]);
   
     const getFooter = async () => {
-      const res = await axios.get(`http://localhost:1337/footer`);
+      const res = await axios.get(`${url}/footer`);
       const { Imagem, Telefone, Email, Instagram, Youtube, Google, Endereco } = res.data;
       setImagem(Imagem);
       setTelefone(Telefone);

@@ -41,7 +41,7 @@ function Formulario() {
   const [paragrafo3, setParagrafo3] = useState([]);
 
   const getParagraph = async () => {
-    const res = await axios.get(`http://localhost:1337/conecte-se`);
+    const res = await axios.get(`${url}/conecte-se`);
     const { Paragrafo_1, Paragrafo_2, Paragrafo_3 } = res.data;
     setParagrafo1(Paragrafo_1);
     setParagrafo2(Paragrafo_2);

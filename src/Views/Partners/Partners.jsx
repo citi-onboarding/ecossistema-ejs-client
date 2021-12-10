@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import './Partners.css'
+import {url} from "../../config/config";
 import {
   PartnersComponent,
   UnderlineTitle
@@ -14,7 +15,7 @@ function Partners() {
   const [partners, setpartners] = useState([])
 
   const getpartners = async () => {
-    const res = await axios.get(`http://localhost:1337/parcerias`);
+    const res = await axios.get(`${url}/parcerias`);
     const partners = res.data;
     console.log(res.data);
     setpartners(partners);

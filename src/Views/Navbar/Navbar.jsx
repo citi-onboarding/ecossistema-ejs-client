@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import './Navbar.css'
+import {url} from "../../config/config";
 
 import { useState } from 'react';
 
@@ -10,7 +11,7 @@ function Navbar() {
     const [logo, setLogo] = useState()
 
   const getLogo = async () => {
-    const res = await axios.get(`http://localhost:1337/navbar`);
+    const res = await axios.get(`${url}/navbar`);
     const { logo } = res.data;
     console.log(logo)
     setLogo(logo);
