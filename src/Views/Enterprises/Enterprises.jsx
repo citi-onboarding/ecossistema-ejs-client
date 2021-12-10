@@ -3,6 +3,7 @@ import "./Enterprises.css";
 
 import Slider from "react-slick";
 import axios from 'axios';
+import {url} from "../../config/config";
 
 import { useState } from 'react';
 
@@ -17,7 +18,7 @@ function Enterprises() {
   const [enterprises, setEnterprises] = useState([])
 
   const getEnterprises = async () => {
-    const res = await axios.get(`http://localhost:1337/e-js`);
+    const res = await axios.get(`${url}/e-js`);
     const enterprises = res.data;
     console.log(enterprises);
     setEnterprises(enterprises);

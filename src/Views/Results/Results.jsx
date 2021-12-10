@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import './Results.css'
 
 import { useState } from 'react';
+import {url} from "../../config/config";
 
 import axios from 'axios';
 
@@ -16,14 +17,14 @@ function Results() {
     const [texto, setTexto] = useState()
 
     const getTexto = async () => {
-        const res = await axios.get(`http://localhost:1337/results-text`);
+        const res = await axios.get(`${url}/results-text`);
         const { ResultsTexto } = res.data;
         console.log(res.data)
         setTexto(ResultsTexto);
       };
 
     const getResults = async () => {
-        const res = await axios.get(`http://localhost:1337/results`);
+        const res = await axios.get(`${url}/results`);
         const results = res.data;
         console.log(results)
         setResults(results);

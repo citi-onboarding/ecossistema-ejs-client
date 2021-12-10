@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import aboutus from '../../assets/aboutus.png'
+import {url} from "../../config/config";
 
 function AboutUs() {
   const [image, setImage] = useState()
@@ -11,7 +12,7 @@ function AboutUs() {
   const [text2, setText2] = useState()
 
    const getTitle = async () => {
-    const res = await axios.get("http://localhost:1337/about-us");
+    const res = await axios.get(`${url}/about-us`);
     const { Paragraph1, Paragraph2, about_us_photo } = res.data;
     console.log(res.data);
     setText(Paragraph1);
